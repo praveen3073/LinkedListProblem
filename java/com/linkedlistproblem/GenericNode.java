@@ -1,8 +1,13 @@
 package com.linkedlistproblem;
 
-public class GenericNode <E>{
+public class GenericNode<E> {
     private GenericNode next;
     private E data;
+
+    public GenericNode(E data) {
+        this.next = null;
+        this.data = data;
+    }
 
     public GenericNode getNext() {
         return next;
@@ -17,11 +22,6 @@ public class GenericNode <E>{
     }
 
     public void setData(E data) {
-        this.data = data;
-    }
-
-    public GenericNode(E data) {
-        this.next = null;
         this.data = data;
     }
 }
