@@ -66,4 +66,14 @@ public class GenericLinkedList {
         tail.setNext(null);
         return tempNode;
     }
+
+    public <E> GenericNode getNode(E data) {
+        GenericNode tempNode = head;
+        while (tempNode != null) {
+            if (tempNode.getData().equals(data))
+                return tempNode;
+            tempNode = tempNode.getNext();
+        }
+        return null;
+    }
 }
