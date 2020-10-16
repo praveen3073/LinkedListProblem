@@ -100,4 +100,14 @@ public class GenericLinkedList {
         }
         return count;
     }
+
+    public void printList() {
+        GenericNode tempNode = head.getNext();
+        System.out.print(head.getData());
+        while (tempNode != null) {
+            System.out.print(" -> " + tempNode.getData());
+            tempNode = tempNode.getNext();
+        }
+        System.out.println();
+    }
 }

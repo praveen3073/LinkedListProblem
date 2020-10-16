@@ -1,6 +1,6 @@
 package com.linkedlistproblem;
 
-public class GenericNode<E> {
+public class GenericNode<E extends Comparable> {
     private GenericNode next;
     private E data;
 
