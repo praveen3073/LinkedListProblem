@@ -49,4 +49,10 @@ public class GenericLinkedList {
         node.setNext(newNode);
         newNode.setNext(tempNode);
     }
+
+    public GenericNode pop() {
+        GenericNode tempNode = head;
+        head = head.getNext();
+        return tempNode;
+    }
 }
