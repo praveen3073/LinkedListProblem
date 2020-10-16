@@ -82,4 +82,22 @@ public class GenericLinkedList {
         }
         return null;
     }
+
+    public <E> void delete(E dataValue) {
+        GenericNode tempNode = head;
+        while (!tempNode.getNext().getData().equals(dataValue)) {
+            tempNode = tempNode.getNext();
+        }
+        tempNode.setNext(tempNode.getNext().getNext());
+    }
+
+    public int getSize() {
+        int count = 0;
+        GenericNode tempNode = head;
+        while (tempNode != null) {
+            tempNode = tempNode.getNext();
+            count++;
+        }
+        return count;
+    }
 }
