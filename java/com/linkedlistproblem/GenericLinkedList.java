@@ -34,4 +34,14 @@ public class GenericLinkedList {
             head = node;
         }
     }
+
+    public void append(GenericNode node) {
+        if (tail == null) {
+            head = node;
+            tail = node;
+        } else {
+            tail.setNext(node);
+            tail = node;
+        }
+    }
 }
