@@ -38,10 +38,15 @@ public class GenericLinkedList {
     public void append(GenericNode node) {
         if (tail == null) {
             head = node;
-            tail = node;
         } else {
             tail.setNext(node);
-            tail = node;
         }
+        tail = node;
+    }
+
+    public void insert(GenericNode node, GenericNode newNode) {
+        GenericNode tempNode = node.getNext();
+        node.setNext(newNode);
+        newNode.setNext(tempNode);
     }
 }
