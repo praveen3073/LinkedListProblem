@@ -55,4 +55,15 @@ public class GenericLinkedList {
         head = head.getNext();
         return tempNode;
     }
+
+    public GenericNode popLast() {
+        GenericNode tempNode = head;
+        while (!tempNode.getNext().equals(tail)) {
+            tempNode = tempNode.getNext();
+        }
+        tail = tempNode;
+        tempNode = tempNode.getNext();
+        tail.setNext(null);
+        return tempNode;
+    }
 }
