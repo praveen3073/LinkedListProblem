@@ -50,6 +50,12 @@ public class GenericLinkedList {
         newNode.setNext(tempNode);
     }
 
+    public <E> void insert(E dataValue, GenericNode newNode) {
+        GenericNode tempNode = getNode(dataValue);
+        newNode.setNext(tempNode.getNext());
+        tempNode.setNext(newNode);
+    }
+
     public GenericNode pop() {
         GenericNode tempNode = head;
         head = head.getNext();
@@ -67,10 +73,10 @@ public class GenericLinkedList {
         return tempNode;
     }
 
-    public <E> GenericNode getNode(E data) {
+    public <E> GenericNode getNode(E dataValue) {
         GenericNode tempNode = head;
         while (tempNode != null) {
-            if (tempNode.getData().equals(data))
+            if (tempNode.getData().equals(dataValue))
                 return tempNode;
             tempNode = tempNode.getNext();
         }
